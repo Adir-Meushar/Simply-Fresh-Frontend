@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Rancho&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Inter', sans-serif;
+  overflow-x:hidden;
+  background-color: rgb(244 244 244 / 73%);
+}
+ body.dark-mode{
+  background-color: rgb(15, 15, 15);
+
+ }
+button{
+  cursor: pointer;
+}
+
+input{
+  outline: none;
+}
+

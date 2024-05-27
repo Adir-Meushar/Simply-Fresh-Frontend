@@ -1,0 +1,90 @@
+.grid-container {
+  max-width: fit-content; 
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  grid-gap: 20px;
+  margin: 10px auto;
+}
+
+.card {
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-image {
+  height: 13.75rem;
+  width: 15rem;
+  border-radius: 8px;
+  padding: 39px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ transition: all .4s ease-in-out;
+}
+.card-image:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-content {
+  text-transform: capitalize;
+  padding: 10px;
+  background-color: rgb(244 244 244 / 73%);
+  color: rgb(38, 64, 34);
+  font-size: .9rem;
+  border-radius: 0 0 5px 5px;
+}
+.card-content.dark{
+  background-color: rgb(15, 15, 15);
+  color: #bcbcbc;
+}
+.card-title {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.card-price{
+  text-align: left;
+  font-weight: bold;
+}
+.discount-box{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.original-price{
+  text-decoration: line-through;
+}
+.sale-price{
+  color: rgb(219, 2, 2);
+}
+.card-description {
+  margin: 0;
+  font-size: 1rem;
+}
+.custom-icon-box {
+  grid-column:span 5 ;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 150px 0;
+  color: rgb(38, 64, 34);
+
+}
+.custom-icon-box p{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.custom-icon-box.dark{
+  color: #bcbcbc;
+
+}
+.custom-icon-box .magnifying-glass{
+  font-size: 12rem;
+}
+.custom-icon-box .sad-smiley{
+  position: absolute;
+  font-size: 10rem;
+  left:55px ;
+  top: 5px;
+}

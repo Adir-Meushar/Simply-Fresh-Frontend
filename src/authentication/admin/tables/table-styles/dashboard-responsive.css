@@ -1,0 +1,108 @@
+.container-table.dark h1{
+  color: #dcdcdc;
+}
+.users-table-dark{
+  color: black;
+ }
+.container-table.dark .page-header{
+  color: #dcdcdc;
+}
+.container-table.dark .users-table th,
+.container-table.dark .product-table th,
+.container-table.dark .admin-data-table th{
+  background-color: #47474733;
+  color: #dcdcdc;
+}
+.container-table.dark .users-table td,
+.container-table.dark .product-table td,
+.container-table.dark .admin-data-table td{
+  background-color: #9b9b9b33;
+  color: #dcdcdc;
+}
+.users-table-dark td{
+  color: white;
+  background: linear-gradient(to right, #414345, #232526);
+ }
+@media screen and (max-width:940px){
+  .users-table ,
+.product-table{
+    width: 90vw;
+    min-width: unset;
+    margin: 3% auto;
+  }
+  .users-table th ,
+  .product-table th{
+    padding: 10px;
+    font-size: .8rem;
+  }
+  .users-table td ,
+  .product-table td{
+    padding: 6px;
+    font-size: .6rem;
+  }
+  .table-img{
+    width: 35px;
+  }
+  .users-table .fa-edit,
+  .product-table .fa-edit,
+  .users-table .ai-delete,
+  .product-table .ai-delete {
+    font-size: .8rem;
+  }
+  .admin-data-table{
+    min-height: 30vh;
+    font-size: .8rem;
+  }
+  .admin-data-table td{
+    padding: 5px;
+
+  }
+  .admin-data-table tr td:not(:first-child) {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:630px){
+  .users-table th ,
+  .product-table th{
+    padding: 6px;
+    font-size: .6rem;
+  }
+  .users-table td ,
+  .product-table td{
+    padding: 4px;
+    font-size: .6rem;
+  }
+  .table-img{
+    width: 25px;
+  }
+  .users-table .fa-edit,
+  .product-table .fa-edit,
+  .users-table .ai-delete,
+  .product-table .ai-delete {
+    font-size: .6rem;
+  }
+  .display{
+    padding: 20px;
+  }
+  .display button,
+  .new-product{
+    min-width: unset;
+    padding: .7rem 25px;
+    font-size: .7rem;
+  }
+  .dashboard-header h1,
+  .container-table .page-header h1{
+    font-size: 1.8rem;
+  }
+  .page-header p{
+   font-size: .8rem;
+  }
+}
+@media screen and (max-width:500px){
+  .users-table td ,
+  .product-table td{
+    padding: 2px 5px;
+    font-size: .4rem;
+  }
+}

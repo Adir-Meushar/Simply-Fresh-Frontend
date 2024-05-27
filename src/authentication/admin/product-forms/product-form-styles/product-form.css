@@ -1,0 +1,115 @@
+.product-modal form{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-modal form input{
+    border: 1px solid #ccc;
+  padding-left: 10px;
+}
+.product-modal form h3{
+    text-align-last: left;
+    margin-bottom: 5px;
+}
+.form-product-header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.form-product-header input{
+    height: 2rem;
+}
+.form-product-header select{
+    height: 2rem;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    outline: none;
+}
+.product-modal label{
+    font-size: .9rem;
+    text-align-last: left;
+}
+.product-modal .input-box{
+    padding: 8px 12px;
+    border-radius: 3px;
+    margin-top: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.product-modal input:focus,
+.product-modal textarea:focus,
+.product-modal select:focus  {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
+  }
+  
+.nutrition-value{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.nutrition-value .input-box{
+    text-align: left;
+    height: 6rem;
+}
+.pricing{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.pricing label{
+    display: flex;
+    flex-direction: column;
+}
+.unit-type{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+}
+.img-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.img-details label{
+text-align: left;
+width: 100%;
+height: 3.5rem;
+}
+.img-details label input{
+    width: 100%;
+    height: 30px;
+}
+
+.description{
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 5rem;
+    resize: none;
+    outline: none;
+    padding: 4px;
+}
+
+.input-number {
+    width: 100px;
+    padding: 8px;
+    font-size: .9rem;
+  }
+  
+  .input-number::-webkit-inner-spin-button,
+  .input-number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+ 

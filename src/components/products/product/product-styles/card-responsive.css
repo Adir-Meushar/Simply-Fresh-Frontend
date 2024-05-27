@@ -1,0 +1,67 @@
+@media screen and (max-width:1350px) {
+    .grid-container{
+      grid-template-columns: repeat(4,1fr);
+  
+    }
+  }
+  
+  @media screen and (max-width:1050px) {
+    .grid-container{
+      grid-template-columns: repeat(3,1fr);
+  
+    }
+  }
+  
+  @media screen and (max-width:800px) {
+    .grid-container{
+      grid-template-columns: repeat(2,1fr);
+    }
+    .custom-icon-box .magnifying-glass{
+      font-size: 8rem;
+    }
+    .custom-icon-box .sad-smiley{
+      position: absolute;
+      font-size: 6rem;
+      left:61px ;
+      top: 8px;
+    }
+    .custom-icon-box p{
+      font-size: 1.2rem;
+    }
+  }
+  @media screen and (max-width:550px) {
+    .grid-container{
+      grid-template-columns: repeat(1,1fr);
+  
+    }
+    .card {
+      flex-direction: row;
+      align-items: center;
+      width: 90vw;
+    }
+    .card-image{
+      width: 10rem;
+      height: 9.5rem;
+      box-shadow: none;
+    }
+    .card-image:hover{
+      box-shadow: unset;
+    }
+    .card-content{
+      padding: 0;
+      background: transparent;
+    }
+    .card-content.dark{
+      background-color: #fff;
+      color: black;
+    }
+    .discount-box{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width:400px) {
+    .card-content{
+      font-size: .8rem;
+    }
+  }

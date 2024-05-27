@@ -1,0 +1,111 @@
+.modal-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(19, 19, 19, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+ .modal {
+    position: relative;
+    width: 80%;
+    color: rgb(38, 64, 34);
+    max-width: 400px;
+    min-height: 400px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 6px black;
+    border-radius: 5px;
+    margin: auto;
+    animation: slide-up 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  .modal form {
+    padding: 24px;
+  }
+
+  label { 
+  display: block;
+  font-size: .9rem;
+  }
+  .modal label{
+    text-align-last: left;
+    height:4rem ;
+  }
+ 
+  .modal input {
+    display: block;
+    border: 1px solid black;
+    padding: 8px 12px;
+    border-radius: 3px;
+    margin-top: 3px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .modal .close-btn,.product-modal .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(58, 58, 58);
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+.error-message{
+  color: #b23d3d;
+  font-size: .75rem;
+  font-weight: bold;
+}
+
+.modal.dark{
+  color: #bcbcbc;
+  background-color: #1b1b1b;
+}
+.modal.dark .close-btn{
+  color: #bcbcbc;
+}
+.modal.dark h2{
+  color: #bcbcbc;
+}
+.modal.dark input{
+  background-color: #9b9b9b33;
+    color: #dcdcdc;
+}
+.modal.dark .login-btn,
+.modal.dark .signup-btn,
+ .edit-modal.dark button{
+  background-color:rgb(7, 83, 0);
+  ;
+}
+.modal.dark .login-btn:disabled,
+.modal.dark .signup-btn:disabled,
+.edit-modal.dark button:disabled{
+  background-color: rgb(138 188 134);
+  color: rgba(18, 18, 18, 0.491);
+}
+.modal.dark .login-link,
+.modal.dark .signup-link{
+  color: rgb(244, 244, 244);
+}
+
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

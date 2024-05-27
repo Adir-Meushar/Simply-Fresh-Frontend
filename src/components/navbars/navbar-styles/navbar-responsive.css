@@ -1,0 +1,73 @@
+@media screen and (max-width:1000px) {
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 90px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: rgb(22, 42, 27);
+        box-shadow:0 40px 60px rgba(0, 0, 0, 0.1) ;
+        padding: 40px 0 0 10px;
+        z-index: 80;
+        transition: 0.3s ease-in-out;
+    }
+
+    .top-nav.dark .navbar{
+        background-color: rgb(15, 15, 15);
+    }
+
+    .navbar.active{
+        right: 0px;
+    }
+
+    .navbar li{
+        margin-bottom: 25px;
+    }
+
+    .link-box{
+        display: flex;
+        flex-direction: column;
+        margin: unset;
+        align-items: flex-start;
+    }
+
+    .user-box{
+        flex-direction: row-reverse;
+        gap: 50px;
+    }
+    
+    .mobile{
+        display: block;
+    }
+
+    .mobile{
+       font-size: 24px;
+       cursor: pointer; 
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+    }
+    .remove-search,.remove-cart{
+        display: none;
+    }
+    .cart-mobile{
+       display: block;
+       position: absolute;
+       left: 20%;
+      }
+    .theme-btn{
+        margin-right: 10%;
+         }
+    .site-name{
+      color: white;
+      font-size: 1.1rem;
+      bottom: -15px;
+     }
+}
+
+

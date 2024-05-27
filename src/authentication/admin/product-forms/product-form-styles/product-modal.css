@@ -1,0 +1,98 @@
+.product-modal {
+    min-width: 600px;
+    width: 35vw;
+    max-width: 100px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: slide-top 0.555s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.btnAdd{
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    background-color:rgb(7, 83, 0);
+    color: white;
+    font-size: 1rem;
+    border: none;
+}
+.btnAdd:disabled{
+    background-color: rgb(138 188 134);
+    color: rgba(18, 18, 18, 0.491); 
+ }
+.product-modal .error-message {
+    color: #b23d3d;
+    font-size: .75rem;
+    font-weight: bold;
+    height: 0;
+  }
+
+  /* Dark */
+  .product-modal.dark{
+    color: #bcbcbc;
+    background-color: #1b1b1b;
+}
+
+.product-modal.dark input,
+.product-modal.dark select,
+.product-modal.dark textarea{
+    background-color: #9b9b9b33;
+    color: #dcdcdc;
+}
+
+.product-modal.dark select option{
+background-color: rgb(38, 38, 38);
+}
+
+.product-modal.dark .close-btn{
+    color: #dcdcdc;
+}
+/*  */
+
+@keyframes slide-top {
+    0% {
+      transform: translateY(200px);
+    }
+  
+    100% {
+      transform: translateY(0); 
+    }
+  }
+  
+  @media screen and (max-width:630px){
+      .product-modal{
+          min-width: 480px;
+          width: 95vw;
+      }
+  .nutrition-value{
+      gap: unset;
+  }
+  }
+  
+  @media screen and (max-width:500px){
+      .product-modal{
+          min-width: 350px;
+          padding: 5px;
+
+      }
+      .product-modal form {
+        gap: 6px;
+      }
+      .product-modal .error-message{
+        font-size: .6rem;
+      }
+      .product-modal form h3{
+        margin: unset;
+        font-size: 1rem;
+      }
+      .nutrition-value{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      padding-left: 40px;
+      }
+      .nutrition-value .input-box{
+          height: 5.1rem;
+      }
+  }

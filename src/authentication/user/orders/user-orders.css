@@ -1,0 +1,128 @@
+.user-orders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align-last: left;
+    cursor: pointer;
+    background-color: white;    
+    box-shadow: 0 0 6px black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+ .orders-box.scrolled{
+  max-height: 100vh;
+  overflow-y: auto;
+ }
+  .order {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 30vw;
+    min-width: 530px;
+    max-width: 700px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out; 
+    max-height: 102px;
+  }
+  
+  .order.expanded {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  
+  .order-info {
+    margin-bottom: 10px;
+  }
+  
+  .order-number {
+    font-weight: bold;
+  }
+  
+  .items {
+    margin-top: 10px;
+    text-align-last: left;
+    font-size: .75rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+  }
+  
+  .user-orders .item {
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+  }
+  .item-name{
+    font-weight: bold;
+  }
+   .user-order-btn{
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+    padding: 7px 12px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgb(156, 139, 139);
+    transition: all .4s;
+   }
+   .cancel-btn{
+    background-color: rgb(196, 5, 5);
+   }
+   .cancel-btn:hover{
+    background-color: rgb(212, 55, 55);
+   }
+   .deliverd-btn{
+    background-color: green;
+   }
+   .deliverd-btn:hover{
+    background-color: rgb(47, 143, 47); 
+    }
+  .no-orders {
+    min-width: 550px;
+    padding: 20px;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+  }
+  .custom-icon{
+    position: relative;
+  }
+  .magnifying-glass{
+    font-size: 4rem;
+  }
+  .sad-smiley{
+    position: absolute;
+    font-size: 2.9rem;
+    left:5px ;
+    top: 5px;
+  }
+  @media screen and (max-width:1350px) {
+    .user-orders{
+        position: unset;
+        }
+        .no-orders{
+         margin-top: unset;
+        }
+  }
+  @media screen and (max-width:600px) {
+    .order , .no-orders{
+        width: 83vw;
+        min-width:300px;
+        }
+        .items{
+         grid-template-columns: repeat(2,1fr);
+        }
+  }
+  @media screen and (max-width:460px) {
+    .order{
+      max-height: 120px;
+    }
+    .order-number{
+      display: flex;
+      flex-direction: column;
+    }
+  }

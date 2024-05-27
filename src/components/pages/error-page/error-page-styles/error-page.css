@@ -1,0 +1,116 @@
+.container-error-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  .container-error-page__left {
+    margin: 3rem;
+  }
+  .container-error-page__right {
+    margin: 3rem;
+  }
+  
+  .venn {
+    display: grid;
+    grid-template-columns: repeat(3, 12.5rem);
+    grid-template-areas: "left center right";
+  }
+  .venn__bubble {
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    height: calc(12.5rem * 2);
+    border-radius: 12.5rem;
+  }
+  .venn__bubble--left {
+    grid-column-start: left;
+    grid-column-end: center;
+    background-color: #DD2C00; 
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 12.5rem 0 #DD2C00; 
+  }
+  .venn__bubble--right {
+    grid-column-start: center;
+    grid-column-end: right;
+    justify-content: flex-end;
+    background: #2962FF repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.2) 0rem, rgba(0, 0, 0, 0) 0.0625rem, rgba(0, 0, 0, 0) 0.5rem, rgba(0, 0, 0, 0.2) 0.5625rem);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset -12.5rem 0 #2962FF; 
+    mix-blend-mode: hard-light;
+  }
+  .venn__text {
+    position: relative;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    height: calc(12.5rem * 2);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: lighter;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.84);
+    z-index: 1;
+  }
+  .venn__text--left {
+    grid-column-start: left;
+    grid-column-end: left;
+    justify-content: flex-start;
+    color: white; 
+  }
+  .venn__text--center {
+    grid-column-start: center;
+    grid-column-end: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white; 
+  }
+  .venn__text--right {
+    grid-column-start: right;
+    grid-column-end: right;
+    justify-content: flex-end;
+    text-align: right;
+    color: white; 
+  }
+  
+  .desc {
+    width: 100%;
+    max-width: calc(12.5rem * 2);
+  }
+  .desc__head {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
+    border-bottom: rgba(0, 0, 0, 0.12) solid 0.0625rem; 
+  }
+  .desc__body {
+    color: rgb(0 0 0 / 76%); 
+  }
+  .desc__body.dark ,.desc__head.dark{
+    color: white;
+  }
+  
+  @media (max-width: 43.75rem) {
+    .venn {
+        grid-template-columns: repeat(3, 6.25rem);
+    }
+    .venn__bubble {
+        height: calc(6.25rem * 2);
+    }
+    .venn__text {
+        font-size: 0.75rem; 
+        line-height: 1.25; 
+        padding: 0.5rem; 
+        height: calc(6.25rem * 2);
+    }
+    .venn__text--center {
+        font-size: 2rem;
+    }
+    .desc {
+        max-width: calc(6.25rem * 3);
+    }
+}
+  

@@ -1,0 +1,118 @@
+.nav-container{
+    position: sticky;
+    top: 0; 
+    z-index: 999;
+    width: 100%;
+}
+
+.top-nav{
+    width: 100vw;
+    max-width: 2500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: #000000;  
+    background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  
+    background: linear-gradient(to right, #0f9b0f, #000000); 
+    padding: 20px 80px;
+    box-shadow:0 5px 15px rgba(0, 0, 0, 0.06) ;
+    position: relative;
+}
+.top-nav.dark{
+    background: #000000; 
+}
+.top-nav.dark .logo{
+    filter: grayscale(50%);
+
+}
+.top-nav.dark .site-name{
+        color: white;
+    }
+.logo-box{
+    position: absolute;
+    top: 5%;
+    left: 20px;
+}
+.logo{
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+.logo:hover{
+    transform: scale(1.08);
+
+}
+.site-name{
+    position: absolute;
+    bottom: -25px; 
+   color:rgb(7, 83, 0);
+    font-family: "Rancho", cursive;
+    font-weight: 400;
+    width: 110%;
+    font-size: 1.2rem;
+}
+
+.link-box{
+    display: flex;
+    margin-left: 20px;
+}
+.user-box{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+.guest-box{
+    display: flex;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+.navbar li a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+.nav-signup,.nav-login,.nav-logout{
+    width: 77px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+ }
+
+.mobile{
+    display: none;
+}
+.mobile i{
+    color: white;
+    cursor: pointer;
+}
+
+.admin-icon,.theme-btn{
+    color: white;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    font-size: 27px;
+}
+.theme-btn{
+ margin-left: 2%;
+  }
+  .cart-mobile{
+    display: none;
+  }
+
