@@ -11,7 +11,7 @@ function ProductsOnSale() {
         const fetchProducts = async () => {
             try {
                 
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/products/bakery`, {
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/products/sale`, {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json" }
