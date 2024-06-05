@@ -10,7 +10,7 @@ function ProductsOnSale() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch(`${API_URL}/products/sale`, {
+                const response = await fetch('https://simply-fresh-backend.onrender.com/products/sale', {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json" }
