@@ -9,7 +9,7 @@ function Bakery() {
     useEffect(() => {
         const fetchBakery = async () => {
             try {
-                const response = await fetch('http://localhost:4000/products/bakery', {
+                const response = await fetch('https://simply-fresh-backend.onrender.com/products/bakery', {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json", }

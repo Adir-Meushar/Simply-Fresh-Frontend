@@ -10,12 +10,11 @@ function ProductsOnSale() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                
-                const response = await fetch(`${process.env.REACT_APP_API_URL}/products/sale`, {
+                const response = await fetch('http://localhost:4000/products/sale', {
                     credentials: "include",
                     method: "GET",
-                    headers: { "Content-type": "application/json" }
-                });
+                    headers: { "Content-type": "application/json"}
+                })
 
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
