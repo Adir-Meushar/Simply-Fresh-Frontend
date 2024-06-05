@@ -7,7 +7,7 @@ function EditProduct({ modal, setModal, currentProduct, setProducts, products })
     const [errors, setErrors] = useState([]);
     const [formData, setFormData] = useState({});
     const [isFormValid, setIsFormValid] = useState(true);
-    const { snackbar, setLoader, isDarkMode } = useContext(GeneralContext);
+    const { snackbar, setLoader, isDarkMode,API_URL  } = useContext(GeneralContext);
 
     useEffect(() => {
         if (Object.keys(currentProduct).length) {
@@ -74,7 +74,7 @@ function EditProduct({ modal, setModal, currentProduct, setProducts, products })
         ev.preventDefault();
         try {
             setLoader(true)
-            const response = await fetch(`http://localhost:4000/products/${productId}`, {
+            const response = await fetch(`${API_URL }/products/${productId}`, {
                 credentials: "include",
                 method: "PUT",
                 headers: {

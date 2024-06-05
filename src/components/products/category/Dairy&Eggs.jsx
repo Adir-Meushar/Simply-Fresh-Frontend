@@ -4,17 +4,17 @@ import Products from "../product/Products";
 
 function DairyAndEggs() {
     const [dairyAndEggs, setDairyAndEggs] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext) 
 
     useEffect(() => {
         const fetchDairyAndEggs = async () => {
             try {
-                const response = await fetch('http://localhost:4000/products/dairy&eggs', {
+                const response = await fetch(`${API_URL}/products/bakery`, {
                     credentials: "include",
-                    method: "GET", 
-                    headers: { "Content-type": "application/json", }
+                    method: "GET",
+                    headers: { "Content-type": "application/json" }
                 })
-
+                
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

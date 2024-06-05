@@ -12,12 +12,12 @@ function ProductsManagement() {
     const [modal, setModal] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
     const { snackbar, setLoader } = useContext(GeneralContext);
-    const { search } = useContext(GeneralContext);
+    const { search,API_URL } = useContext(GeneralContext);
 
     const fetchProducts = async () => {
 
         try {
-            const response = await fetch('http://localhost:4000/products/all', {
+            const response = await fetch(`${API_URL}/products/all`, {
                 credentials: "include",
                 method: "GET",
                 headers: {

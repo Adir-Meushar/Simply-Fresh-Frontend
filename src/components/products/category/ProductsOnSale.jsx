@@ -5,15 +5,15 @@ import { GeneralContext } from "../../../App";
 
 function ProductsOnSale() {
     const [productsOnSale, setProductsOnSale] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
-
+    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext) 
+ 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:4000/products/sale', {
+                const response = await fetch(`${API_URL}/products/sale`, {
                     credentials: "include",
                     method: "GET",
-                    headers: { "Content-type": "application/json"}
+                    headers: { "Content-type": "application/json" }
                 })
 
                 if (!response.ok) {

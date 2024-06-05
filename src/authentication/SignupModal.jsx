@@ -18,7 +18,7 @@ function Signup() {
     houseNumber: ""
   });
   
-  const { snackbar, setLoader, signupModal, setSignModal, setLoginModal, isDarkMode } = useContext(GeneralContext);
+  const { snackbar, setLoader, signupModal, setSignModal, setLoginModal, isDarkMode,API_URL } = useContext(GeneralContext);
 
   const handleValid = (ev) => {
     const { name, value } = ev.target;
@@ -41,7 +41,7 @@ function Signup() {
     ev.preventDefault();
     try {
       setLoader(true)
-      const response = await fetch('http://localhost:4000/users/signup', {
+      const response = await fetch(`${API_URL}users/signup`, {
         credentials: "include",
         method: "POST",
         headers: { "Content-type": "application/json" },

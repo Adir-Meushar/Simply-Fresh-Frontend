@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { GeneralContext } from "../../../App";
 
 function AdminData() {
     const [priceData, setPriceData] = useState([]);
@@ -10,6 +11,7 @@ function AdminData() {
         bakeryAmount: '',
         dairyAndEggs: ''
     });
+    const {API_URL } = useContext(GeneralContext);
 
     useEffect(() => {
 
@@ -17,7 +19,7 @@ function AdminData() {
 
             try {
 
-                const response = await fetch('http://localhost:4000/dashboard/products/data', {
+                const response = await fetch(`${API_URL}/dashboard/products/data`, {
                     credentials: "include",
                     method: "GET",
                     headers: {

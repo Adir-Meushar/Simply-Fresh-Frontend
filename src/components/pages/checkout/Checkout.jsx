@@ -9,7 +9,7 @@ import { GeneralContext } from '../../../App';
 import Popup from '../../popup/Popup';
 
 function Checkout() {
-    const { cartProducts, setCartProducts, snackbar, user, isDarkMode } = useContext(GeneralContext);
+    const { cartProducts, setCartProducts, isDarkMode,API_URL} = useContext(GeneralContext);
     const [totalPrice, setTotalPrice] = useState(0);
     const [cardExpiredData, setCardExpiredData] = useState();
     const [deliveryDate, setDeliveryDate] = useState(Date.now());
@@ -54,7 +54,7 @@ function Checkout() {
     const createOrder = async (ev) => {
         ev.preventDefault();
         try {
-            const response = await fetch('http://localhost:4000/orders/create', {
+            const response = await fetch(`${API_URL}/orders/create`, {
                 credentials: "include",
                 method: "POST",
                 headers: {

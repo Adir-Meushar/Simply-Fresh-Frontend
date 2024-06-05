@@ -4,16 +4,17 @@ import { GeneralContext } from "../../../App";
 
 function Fruits() {
     const [fruits, setFruits] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext) 
 
     useEffect(() => {
         const fetchFruits = async () => {
             try {
-                const response = await fetch('http://localhost:4000/products/fruits', {
+                const response = await fetch(`${API_URL}/products/fruits`, {
                     credentials: "include",
                     method: "GET",
-                    headers: { "Content-type": "application/json", }
+                    headers: { "Content-type": "application/json" }
                 })
+
 
                 if (!response.ok) {
                     throw new Error('Network response was not ok');

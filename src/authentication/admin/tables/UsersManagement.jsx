@@ -4,12 +4,12 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaRegEdit } from "react-icons/fa";
 function UsersManagement() {
     const [users, setUsers] = useState([]);
-    const { snackbar } = useContext(GeneralContext)
+    const { snackbar,API_URL } = useContext(GeneralContext)
 
     const fetchUsers = async () => {
 
         try {
-            const response = await fetch('http://localhost:4000/users', {
+            const response = await fetch(`${API_URL}/users`, {
                 credentials: "include",
                 method: "GET",
                 headers: {

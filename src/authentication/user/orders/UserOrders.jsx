@@ -9,14 +9,14 @@ import './user-orders.css'
 function UserOrders() {
     const [myOrders, setMyOrders] = useState([]);
     const [expandedOrder, setExpandedOrder] = useState(null);
-    const { snackbar, user, isDarkMode } = useContext(GeneralContext);
+    const { snackbar, user, isDarkMode,API_URL } = useContext(GeneralContext);
     const currentDate = Date.now();
     const navigate = useNavigate();
 
     useEffect(() => {
         const getMyOrders = async (userId) => {
             try {
-                const response = await fetch(`http://localhost:4000/orders/my-orders/${userId}`, {
+                const response = await fetch(`${API_URL}/orders/my-orders/${userId}`, {
                     credentials: "include",
                     method: "GET",
                     headers: {

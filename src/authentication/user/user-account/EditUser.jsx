@@ -6,14 +6,14 @@ import { GeneralContext } from "../../../App";
 function EditUser() {
     const [errors, setErrors] = useState({});
     const [isFormValid, setIsFormValid] = useState(true);
-    const { user,snackbar,setLoader,isDarkMode } = useContext(GeneralContext);
+    const { user,snackbar,setLoader,isDarkMode,API_URL } = useContext(GeneralContext);
     const [formData, setFormData] = useState({});
 
     useEffect(() => {
         const fetchData = async () => {
             if (user) {
                 try {
-                    const response = await fetch(`http://localhost:4000/users/${user._id}`, {
+                    const response = await fetch(`${API_URL}/users/${user._id}`, {
                         credentials: "include",
                         method: "GET",
                         headers: {
