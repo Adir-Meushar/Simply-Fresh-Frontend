@@ -9,7 +9,7 @@ function Vegetables() {
     useEffect(() => {
         const fetchVegetables = async () => {
             try {
-                const response = await fetch(`${API_URL}/products/bakery`, {
+                const response = await fetch(`${API_URL}/products/vegetables`, {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json" }
