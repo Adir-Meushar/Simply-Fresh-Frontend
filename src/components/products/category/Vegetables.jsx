@@ -4,8 +4,8 @@ import './category.css'
 import { GeneralContext } from "../../../App";
 function Vegetables() {
     const [vegetables, setVegetables] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
-    const API_URL = process.env.REACT_APP_API_URL;
+    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext);
+
     useEffect(() => {
         const fetchVegetables = async () => {
             try {

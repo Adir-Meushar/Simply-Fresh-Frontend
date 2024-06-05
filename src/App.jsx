@@ -31,8 +31,10 @@ function App() {
 
   const navigate = useNavigate();
   const API_URL = process.env.REACT_APP_API_URL; //localhost
+  
+  console.log("API_URL:", API_URL);
 
-  useEffect(() => {
+    useEffect(() => {
     const getCurrentUser = async () => {
       const token = localStorage.getItem('token');
       if (token) {
