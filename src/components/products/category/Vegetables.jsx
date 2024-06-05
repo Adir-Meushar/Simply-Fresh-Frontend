@@ -28,7 +28,7 @@ function Vegetables() {
             }
         }
         fetchVegetables();
-    }, [])
+    }, [API_URL])
 
 
 

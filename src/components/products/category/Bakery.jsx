@@ -5,7 +5,7 @@ import { GeneralContext } from "../../../App";
 function Bakery() {
     const [bakery, setBakery] = useState([]);
     const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext);
-
+ console.log(API_URL);
         useEffect(() => {
         const fetchBakery = async () => {
             try {
