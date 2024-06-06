@@ -30,9 +30,6 @@ function App() {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1000);
 
   const navigate = useNavigate();
-  const API_URL = process.env.REACT_APP_API_URL; //localhost
-  
-  console.log("API_URL:", API_URL);
 
     useEffect(() => {
     const getCurrentUser = async () => {
@@ -83,8 +80,7 @@ function App() {
       snackbar, user, setUser, count, setCount,
       cartProducts, setCartProducts, search, setSearch,
       setLoader, isDarkMode, setIsDarkMode, loginModal, setLoginModal, signupModal, setSignModal,
-       isSmallScreen, setIsSmallScreen,API_URL
-    }}>
+       isSmallScreen, setIsSmallScreen}}>
       <CenteredLayout>
         <Navbar />
         <Router />

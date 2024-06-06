@@ -9,7 +9,7 @@ import { GeneralContext } from '../../../App';
 import Popup from '../../popup/Popup';
 
 function Checkout() {
-    const { cartProducts, setCartProducts, isDarkMode,API_URL} = useContext(GeneralContext);
+    const { cartProducts, setCartProducts, isDarkMode} = useContext(GeneralContext);
     const [totalPrice, setTotalPrice] = useState(0);
     const [cardExpiredData, setCardExpiredData] = useState();
     const [deliveryDate, setDeliveryDate] = useState(Date.now());
@@ -54,7 +54,7 @@ function Checkout() {
     const createOrder = async (ev) => {
         ev.preventDefault();
         try {
-            const response = await fetch(`${API_URL}/orders/create`, {
+            const response = await fetch('https://simply-fresh-backend.onrender.com/orders/create', {
                 credentials: "include",
                 method: "POST",
                 headers: {

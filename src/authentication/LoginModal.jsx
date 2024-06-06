@@ -10,7 +10,7 @@ function Login() {
     password: "",
   });
 
-  const { setUser, snackbar, setLoader, loginModal, setLoginModal, setSignModal, isDarkMode,API_URL } = useContext(GeneralContext);
+  const { setUser, snackbar, setLoader, loginModal, setLoginModal, setSignModal, isDarkMode } = useContext(GeneralContext);
 
   const handleValid = (ev) => {
     const { name, value } = ev.target;
@@ -33,7 +33,7 @@ function Login() {
     ev.preventDefault();
     try {
       setLoader(true)
-      const response = await fetch(`${API_URL}users/login`, {
+      const response = await fetch('https://simply-fresh-backend.onrender.com/users/login', {
         credentials: "include",
         method: "POST",
         headers: { "Content-type": "application/json" },

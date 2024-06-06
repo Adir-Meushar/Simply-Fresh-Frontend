@@ -4,12 +4,12 @@ import Products from "../product/Products";
 
 function DairyAndEggs() {
     const [dairyAndEggs, setDairyAndEggs] = useState([]);
-    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
 
     useEffect(() => {
         const fetchDairyAndEggs = async () => {
             try {
-                const response = await fetch(`${API_URL}/products/bakery`, {
+                const response = await fetch('https://simply-fresh-backend.onrender.com/products/dairy&eggs', {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json" }

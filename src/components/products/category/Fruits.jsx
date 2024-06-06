@@ -4,12 +4,12 @@ import { GeneralContext } from "../../../App";
 
 function Fruits() {
     const [fruits, setFruits] = useState([]);
-    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
 
     useEffect(() => {
         const fetchFruits = async () => {
             try {
-                const response = await fetch(`${API_URL}/products/fruits`, {
+                const response = await fetch('https://simply-fresh-backend.onrender.com/products/fruits', {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json" }

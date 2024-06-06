@@ -4,12 +4,12 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaRegEdit } from "react-icons/fa";
 function UsersManagement() {
     const [users, setUsers] = useState([]);
-    const { snackbar,API_URL } = useContext(GeneralContext)
+    const { snackbar} = useContext(GeneralContext)
 
     const fetchUsers = async () => {
 
         try {
-            const response = await fetch(`${API_URL}/users`, {
+            const response = await fetch('https://simply-fresh-backend.onrender.com/users', {
                 credentials: "include",
                 method: "GET",
                 headers: {

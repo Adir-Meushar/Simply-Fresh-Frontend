@@ -12,12 +12,12 @@ function ProductsManagement() {
     const [modal, setModal] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
     const { snackbar, setLoader } = useContext(GeneralContext);
-    const { search,API_URL } = useContext(GeneralContext);
+    const { search} = useContext(GeneralContext);
 
     const fetchProducts = async () => {
 
         try {
-            const response = await fetch(`${API_URL}/products/all`, {
+            const response = await fetch('https://simply-fresh-backend.onrender.com/products/all', {
                 credentials: "include",
                 method: "GET",
                 headers: {

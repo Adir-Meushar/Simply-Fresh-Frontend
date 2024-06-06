@@ -4,12 +4,12 @@ import './category.css'
 import { GeneralContext } from "../../../App";
 function Vegetables() {
     const [vegetables, setVegetables] = useState([]);
-    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext);
+    const{isDarkMode,isSmallScreen}=useContext(GeneralContext);
 
     useEffect(() => {
         const fetchVegetables = async () => {
             try {
-                const response = await fetch(`${API_URL}/products/vegetables`, {
+                const response = await fetch('https://simply-fresh-backend.onrender.com/products/vegetables', {
                     credentials: "include",
                     method: "GET",
                     headers: { "Content-type": "application/json" }
@@ -28,7 +28,7 @@ function Vegetables() {
             }
         }
         fetchVegetables();
-    }, [API_URL])
+    }, [])
 
 
 

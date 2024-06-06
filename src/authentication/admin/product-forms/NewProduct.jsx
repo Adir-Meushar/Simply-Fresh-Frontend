@@ -25,7 +25,7 @@ function NewProduct({ updateProducts }) {
     const [errors, setErrors] = useState([]);
     const [formData, setFormData] = useState(initialFormData);
     const [isFormValid, setIsFormValid] = useState(false);
-    const { snackbar, setLoader, isDarkMode,API_URL  } = useContext(GeneralContext);
+    const { snackbar, setLoader, isDarkMode } = useContext(GeneralContext);
 
     const nutritionalValue = [
         { name: "calories", label: "Calories" },
@@ -74,7 +74,7 @@ function NewProduct({ updateProducts }) {
                 nutritionalValue: { calories, carbohydrates, protein, fat },
                 img: { url: imgUrl, alt: imgAlt }
             };
-            const response = await fetch(`${API_URL }/products`, {
+            const response = await fetch('https://simply-fresh-backend.onrender.com/products', {
                 credentials: "include",
                 method: "POST",
                 headers: {

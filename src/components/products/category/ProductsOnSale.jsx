@@ -5,7 +5,7 @@ import { GeneralContext } from "../../../App";
 
 function ProductsOnSale() {
     const [productsOnSale, setProductsOnSale] = useState([]);
-    const{isDarkMode,isSmallScreen,API_URL}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
  
     useEffect(() => {
         const fetchProducts = async () => {
