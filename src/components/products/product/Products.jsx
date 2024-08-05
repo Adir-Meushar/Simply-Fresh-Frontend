@@ -55,7 +55,7 @@ const Products = ({ items }) => {
         ))}
         {filterd.length === 0 &&
           <div className={`custom-icon-box ${isDarkMode ? 'dark' : ''}`}>
-            <p>No Products was found... </p>
+            <p>Loading products, please wait... </p>
             <div className="custom-icon">
               <PiMagnifyingGlassBold className="magnifying-glass" />
               <PiSmileySadDuotone className="sad-smiley" />
