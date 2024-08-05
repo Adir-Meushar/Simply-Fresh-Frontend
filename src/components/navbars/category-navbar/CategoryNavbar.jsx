@@ -22,7 +22,7 @@ function CategoryNavbar({handleClick}) {
                     <li><Link onClick={handleClick} to="/vegetables">Vegetables</Link></li>
                     <li><Link onClick={handleClick} to="/fruits">Fruits</Link></li>
                     <li><Link onClick={handleClick} to="/bakery">Bakery</Link></li>
-                    <li><Link onClick={handleClick} to="/dairy&eggs">Dairy&eggs</Link></li>
+                    <li><Link onClick={handleClick} to="/dairy&eggs">Dairy&Eggs</Link></li>
                 </ul>
             </nav>
         </div>

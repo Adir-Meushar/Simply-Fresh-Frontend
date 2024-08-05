@@ -31,8 +31,6 @@ function ProductsOnSale() {
         fetchProducts();
     }, [])
 
-
-
     return (
         <div className={`main-content ${isDarkMode ? 'dark' : ''}`}>
           <div className='category-container'>
