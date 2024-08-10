@@ -6,7 +6,7 @@ import { GeneralContext } from '../../../App';
 import { useLocation } from 'react-router-dom';
 import { PiMagnifyingGlassBold } from "react-icons/pi";
 import { PiSmileySadDuotone } from "react-icons/pi";
-import Message from '../../message/Message';
+import Message from '../../Message/Message';
 
 const Products = ({ items }) => {
   const [sortOption, setSortOption] = useState('low');
