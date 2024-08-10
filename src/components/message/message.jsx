@@ -1,6 +1,6 @@
-function Message({children}) {
+function Message({children,className}) {
     return (
-        <div>
+        <div className={className}>
             {children}
         </div>
     )

@@ -25,7 +25,7 @@
       left:61px ;
       top: 8px;
     }
-    .custom-icon-box p{
+    .custom-icon-box .loading-message{
       font-size: 1.2rem;
     }
   }

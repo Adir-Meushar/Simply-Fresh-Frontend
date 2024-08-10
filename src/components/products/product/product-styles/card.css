@@ -71,7 +71,8 @@
   color: rgb(38, 64, 34);
 
 }
-.custom-icon-box p{
+
+.custom-icon-box .loading-message{
   font-weight: bold;
   font-size: 1.5rem;
 }

@@ -31,7 +31,7 @@ function App() {
 
   const navigate = useNavigate();
 
-    useEffect(() => {
+  useEffect(() => {
     const getCurrentUser = async () => {
       const token = localStorage.getItem('token');
       if (token) {
@@ -79,8 +79,9 @@ function App() {
     <GeneralContext.Provider value={{
       snackbar, user, setUser, count, setCount,
       cartProducts, setCartProducts, search, setSearch,
-      setLoader, isDarkMode, setIsDarkMode, loginModal, setLoginModal, signupModal, setSignModal,
-       isSmallScreen, setIsSmallScreen}}>
+      loader, setLoader, isDarkMode, setIsDarkMode, loginModal, setLoginModal, signupModal, setSignModal,
+      isSmallScreen, setIsSmallScreen
+    }}>
       <CenteredLayout>
         <Navbar />
         <Router />
