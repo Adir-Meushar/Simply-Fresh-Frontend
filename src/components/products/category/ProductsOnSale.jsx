@@ -5,10 +5,11 @@ import { GeneralContext } from "../../../App";
 
 function ProductsOnSale() {
     const [productsOnSale, setProductsOnSale] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen,setLoader}=useContext(GeneralContext) 
  
     useEffect(() => {
         const fetchProducts = async () => {
+            setLoader(true)
             try {
                 const response = await fetch('https://simply-fresh-backend.onrender.com/products/sale', {
                     credentials: "include",
@@ -23,6 +24,7 @@ function ProductsOnSale() {
                 const productsData = await response.json();
 
                 setProductsOnSale(productsData);
+                setLoader(false)
 
             } catch (error) {
                 console.error('Error fetching user data:', error);
