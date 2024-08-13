@@ -4,11 +4,12 @@ import Products from "../product/Products";
 
 function DairyAndEggs() {
     const [dairyAndEggs, setDairyAndEggs] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen,setLoader}=useContext(GeneralContext) 
 
     useEffect(() => {
         const fetchDairyAndEggs = async () => {
             try {
+                setLoader(true)
                 const response = await fetch('https://simply-fresh-backend.onrender.com/products/dairy&eggs', {
                     credentials: "include",
                     method: "GET",
@@ -22,7 +23,7 @@ function DairyAndEggs() {
                 const dairyAndEggsData = await response.json();
 
                 setDairyAndEggs(dairyAndEggsData);
-
+                setLoader(false)
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }

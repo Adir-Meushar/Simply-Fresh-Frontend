@@ -4,11 +4,12 @@ import { GeneralContext } from "../../../App";
 
 function Fruits() {
     const [fruits, setFruits] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext) 
+    const{isDarkMode,isSmallScreen,setLoader}=useContext(GeneralContext) 
 
     useEffect(() => {
         const fetchFruits = async () => {
             try {
+                setLoader(true)
                 const response = await fetch('https://simply-fresh-backend.onrender.com/products/fruits', {
                     credentials: "include",
                     method: "GET",
@@ -23,7 +24,7 @@ function Fruits() {
                 const fruitsData = await response.json();
 
                 setFruits(fruitsData);
-
+                setLoader(false)
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }

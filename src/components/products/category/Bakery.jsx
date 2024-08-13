@@ -4,11 +4,12 @@ import { GeneralContext } from "../../../App";
 
 function Bakery() {
     const [bakery, setBakery] = useState([]);
-    const{isDarkMode,isSmallScreen}=useContext(GeneralContext);
+    const{isDarkMode,isSmallScreen,setLoader}=useContext(GeneralContext);
 
         useEffect(() => {
         const fetchBakery = async () => {
             try {
+                setLoader(true)
                 const response = await fetch('https://simply-fresh-backend.onrender.com/products/bakery', {
                     credentials: "include",
                     method: "GET",
@@ -22,7 +23,7 @@ function Bakery() {
                 const bakeryData = await response.json();
 
                 setBakery(bakeryData);
-
+                setLoader(false)
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }
