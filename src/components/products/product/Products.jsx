@@ -10,12 +10,16 @@ import Message from '../../message/Message';
 
 const Products = ({ items }) => {
   const [sortOption, setSortOption] = useState('low');
-  const { search, loader, setSearch, isDarkMode } = useContext(GeneralContext)
+  const { search, loader,setLoader, setSearch, isDarkMode } = useContext(GeneralContext)
 
   const location = useLocation();
 
   useEffect(() => {
+    setLoader(true);
     setSearch('');
+    setTimeout(() => {
+      setLoader(false); // Simulate a loading delay for demonstration
+    }, 1000);
   }, [location.pathname]);
 
   const handleSortChange = (ev) => {
