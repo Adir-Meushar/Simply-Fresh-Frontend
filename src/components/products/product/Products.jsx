@@ -38,7 +38,7 @@ const Products = ({ items }) => {
     }) : [];
   };
 
-  const filtered  = search.length ? sortItems(items).filter(item => item.title.toUpperCase().includes(search.toUpperCase())) : sortItems(items);
+  const filterd = search.length ? sortItems(items).filter(item => item.title.toUpperCase().includes(search.toUpperCase())) : sortItems(items);
 
   return (
     <>
@@ -51,23 +51,18 @@ const Products = ({ items }) => {
       </div>
 
       <div className="grid-container">
-        {loader ? (
+        {filterd.map((item) => (
+          <ProductCard key={item._id} item={item} />
+        ))}
+        {filterd.length === 0 &&
           <div className={`custom-icon-box ${isDarkMode ? 'dark' : ''}`}>
-            <Message>Loading Products Please Wait...</Message>
+            {loader? <Message>Loading Products Please Wait...</Message>:<Message>Product was not found...</Message>}
             <div className="custom-icon">
               <PiMagnifyingGlassBold className="magnifying-glass" />
-            </div>
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className={`custom-icon-box ${isDarkMode ? 'dark' : ''}`}>
-            <Message>Product was not found...</Message>
-            <div className="custom-icon">
               <PiSmileySadDuotone className="sad-smiley" />
             </div>
           </div>
-        ) : (
-          filtered.map((item) => <ProductCard key={item._id} item={item} />)
-        )}
+        }
       </div>
     </>
   );
