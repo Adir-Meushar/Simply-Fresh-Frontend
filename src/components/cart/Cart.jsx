@@ -103,7 +103,7 @@ function Cart() {
                                 <PiMagnifyingGlassBold className="magnifying-glass" />
                                 <PiSmileySadDuotone className="sad-smiley" />
                             </div>
-                            <p>No Products was found... </p>
+                            <p>Cart is empty... </p>
                         </div>}
                     </div>
                 </div>

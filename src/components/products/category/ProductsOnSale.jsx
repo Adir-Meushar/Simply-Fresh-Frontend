@@ -24,14 +24,16 @@ function ProductsOnSale() {
                 const productsData = await response.json();
 
                 setProductsOnSale(productsData);
-                setLoader(false)
 
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }
+            finally {
+                setLoader(false); // Stop loader after fetching
+              }
         }
         fetchProducts();
-    }, [])
+    }, [setLoader])
 
     return (
         <div className={`main-content ${isDarkMode ? 'dark' : ''}`}>
