@@ -83,9 +83,17 @@
 .custom-icon-box .magnifying-glass{
   font-size: 12rem;
 }
-.custom-icon-box .sad-smiley{
+
+.custom-icon-box .sad-smiley {
   position: absolute;
   font-size: 10rem;
-  left:55px ;
   top: 5px;
+}
+
+.custom-icon-box .sad-smiley-empty {
+  left: 52px;
+}
+
+.custom-icon-box .sad-smiley-loading {
+  left: 92px;
 }
