@@ -18,13 +18,13 @@ export default function Router() {
     const { user, setLoader } = useContext(GeneralContext);
     const location = useLocation();
 
-    useEffect(() => {
-        setLoader(true);
-        const timeout = setTimeout(() => {
-            setLoader(false);
-        }, 1000);
-        return () => clearTimeout(timeout);
-    }, [location, setLoader]);
+    // useEffect(() => {
+    //     setLoader(true);
+    //     const timeout = setTimeout(() => {
+    //         setLoader(false);
+    //     }, 1000);
+    //     return () => clearTimeout(timeout);
+    // }, [location, setLoader]);
 
     return (
         <Routes>
