@@ -4,12 +4,11 @@ import './category.css'
 import { GeneralContext } from "../../../App";
 function Vegetables() {
     const [vegetables, setVegetables] = useState([]);
-    const{isDarkMode,isSmallScreen,setLoader,setGridLoader}=useContext(GeneralContext);
+    const{isDarkMode,isSmallScreen,setGridLoader}=useContext(GeneralContext);
 
     useEffect(() => {
         const fetchVegetables = async () => {
             try {
-                // setLoader(true)
                 setGridLoader(true)
                 const response = await fetch('https://simply-fresh-backend.onrender.com/products/vegetables', {
                     credentials: "include",
@@ -24,7 +23,6 @@ function Vegetables() {
                 const vegetablesData = await response.json();
 
                 setVegetables(vegetablesData);
-                // setLoader(false)
                 setGridLoader(false)
 
             } catch (error) {
