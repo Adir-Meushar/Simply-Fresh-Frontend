@@ -21,23 +21,23 @@
     font-size: 8rem;
   }
 
-  .custom-icon-box .sad-smiley{
+  .custom-icon-box .smiley{
     position: absolute;
     font-size: 6rem;
     left:61px ;
     top: 8px;
   }
-  .custom-icon-box .sad-smiley {
+  /* .custom-icon-box .sad-smiley {
     position: absolute;
     font-size: 6rem;
     top: 8px;
   }
-  
+   */
   .custom-icon-box .sad-smiley-empty {
     left:58px ;
   }
   
-  .custom-icon-box .sad-smiley-loading {
+  .custom-icon-box .happy-smiley-loading {
     left: 92px;
   }
   .custom-icon-box .main-grid-msg{

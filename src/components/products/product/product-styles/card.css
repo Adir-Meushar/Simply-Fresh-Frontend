@@ -84,7 +84,7 @@
   font-size: 12rem;
 }
 
-.custom-icon-box .sad-smiley {
+.custom-icon-box .smiley {
   position: absolute;
   font-size: 10rem;
   top: 5px;
@@ -94,6 +94,6 @@
   left: 52px;
 }
 
-.custom-icon-box .sad-smiley-loading {
+.custom-icon-box .happy-smiley-loading {
   left: 92px;
 }

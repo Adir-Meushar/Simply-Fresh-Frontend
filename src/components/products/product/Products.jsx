@@ -6,11 +6,13 @@ import { GeneralContext } from '../../../App';
 import { useLocation } from 'react-router-dom';
 import { PiMagnifyingGlassBold } from "react-icons/pi";
 import { PiSmileySadDuotone } from "react-icons/pi";
+import { PiSmileyDuotone } from "react-icons/pi";
 import Message from '../../message/Message';
+import GridLoader from '../../loader/GridLoader';
 
 const Products = ({ items }) => {
   const [sortOption, setSortOption] = useState('low');
-  const { search, loader, setSearch, isDarkMode } = useContext(GeneralContext)
+  const { search, loader,gridLoader, setSearch, isDarkMode } = useContext(GeneralContext)
 
   const location = useLocation();
 
@@ -38,7 +40,9 @@ const Products = ({ items }) => {
     }) : [];
   };
 
-  const filtered = search.length ? sortItems(items).filter(item => item.title.toUpperCase().includes(search.toUpperCase())) : sortItems(items);
+  const filtered = search.length ?
+    sortItems(items).filter(item => item.title.toUpperCase().includes(search.toUpperCase())) :
+    sortItems(items);
 
   return (
     <>
@@ -51,12 +55,13 @@ const Products = ({ items }) => {
       </div>
 
       <div className="grid-container">
-        {loader ? (
+        {gridLoader ? (
           <div className={`custom-icon-box ${isDarkMode ? 'dark' : ''}`}>
             <Message className={'main-grid-msg'}>Loading Products Please Wait...</Message>
             <div className="custom-icon">
               <PiMagnifyingGlassBold className="magnifying-glass" />
-              <PiSmileySadDuotone className="sad-smiley sad-smiley-loading" />
+              <PiSmileyDuotone  className="smiley happy-smiley-loading" />
+              <GridLoader/>
             </div>
           </div>
         ) : filtered.length === 0 ? (
@@ -64,7 +69,7 @@ const Products = ({ items }) => {
             <Message className={'main-grid-msg'}>Product was not found...</Message>
             <div className="custom-icon">
               <PiMagnifyingGlassBold className="magnifying-glass" />
-              <PiSmileySadDuotone className="sad-smiley sad-smiley-empty" />
+              <PiSmileySadDuotone className="smiley sad-smiley-empty" />
             </div>
           </div>
         ) : (
