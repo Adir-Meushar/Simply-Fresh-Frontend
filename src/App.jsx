@@ -8,6 +8,7 @@ import Snackbar from './components/snackbar/Snackbar';
 import Footer from './components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Loader from './components/loader/Loader';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 
 
 export const GeneralContext = createContext();
@@ -23,7 +24,7 @@ function App() {
   const [cartProducts, setCartProducts] = useState([]);
   const [snackbarText, setSnackbarText] = useState('')
   const [loader, setLoader] = useState(true);
-  const [gridLoader,setGridLoader]=useState(false)
+  const [gridLoader, setGridLoader] = useState(false)
   const [search, setSearch] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
@@ -80,9 +81,10 @@ function App() {
     <GeneralContext.Provider value={{
       snackbar, user, setUser, count, setCount,
       cartProducts, setCartProducts, search, setSearch,
-      loader, setLoader,gridLoader,setGridLoader, isDarkMode, setIsDarkMode, loginModal, setLoginModal, signupModal, setSignModal,
+      loader, setLoader, gridLoader, setGridLoader, isDarkMode, setIsDarkMode, loginModal, setLoginModal, signupModal, setSignModal,
       isSmallScreen, setIsSmallScreen
     }}>
+      <ScrollToTop />
       <CenteredLayout>
         <Navbar />
         <Router />
