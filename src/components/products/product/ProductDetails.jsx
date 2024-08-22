@@ -83,14 +83,20 @@ function ProductDetails({ item, closeModal, setCount }) {
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-        <button className='add-btn slide'
+            <button className='add-btn up'
           onClick={(ev) => {
             ev.stopPropagation();
             handleAddToCart();
             closeModal(false);
           }}>Add to Cart</button>    
+          </div>
+        </div>
+        {/* <button className='add-btn up'
+          onClick={(ev) => {
+            ev.stopPropagation();
+            handleAddToCart();
+            closeModal(false);
+          }}>Add to Cart</button>     */}
       </div>
     </div>
   )
