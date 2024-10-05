@@ -4,11 +4,11 @@ import './product-styles/product-details.css';
 import './product-styles/product-details-responsive.css';
 
 function ProductDetails({ item, closeModal, setCount }) {
-  const { user, setCartProducts, isDarkMode, showToastMessage } = useContext(GeneralContext);
+  const { user, setCartProducts, isDarkMode } = useContext(GeneralContext);
 
   const handleAddToCart = () => {
     if (!user) {
-      showToastMessage(`Please log in in order to purchase.`, '#f44336');
+      // showToastMessage(`Please log in in order to purchase.`, '#f44336');
       closeModal(false);
       return;
     }
@@ -36,8 +36,8 @@ function ProductDetails({ item, closeModal, setCount }) {
     const updatedCartItem = cart.find(cartItem => cartItem.id === item._id);
     setCount(updatedCartItem ? updatedCartItem.quantity : 0);
     setCartProducts(cart);
-    // snackbar(`One ${item.unit} ${item.title} was added to cart`);      
-    showToastMessage(`One ${item.unit} ${item.title} was added to your cart`, '#4CAF50')
+    snackbar(`One ${item.unit} ${item.title} was added to cart`);      
+    // showToastMessage(`One ${item.unit} ${item.title} was added to your cart`, '#4CAF50')
   };
 
   return (

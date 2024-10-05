@@ -9,7 +9,6 @@ import Footer from './components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
-import ToastMessage from './components/toastMessage/Toast';
 
 export const GeneralContext = createContext();
 
@@ -92,8 +91,6 @@ function App() {
         <Footer />
         {loader && <Loader />}
         {snackbarText && <Snackbar text={snackbarText} />}
-        {showToast && <ToastMessage message={toastMessage} bgColor={toastBgColor} visible={showToast} />}
-
         </CenteredLayout>
     </GeneralContext.Provider>
   );
