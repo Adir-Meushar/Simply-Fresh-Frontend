@@ -9,9 +9,10 @@ import Footer from './components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
-
+import Toast from './components/toastMessage/Toast';
 
 export const GeneralContext = createContext();
+
 
 export const RoleType = {
   user: 10,
@@ -30,6 +31,9 @@ function App() {
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignModal] = useState(false)
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1000);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage,setToastMessage]=useState('')
+  const [toastBgColor, setToastBgColor] = useState(''); // Add this line
 
   const navigate = useNavigate();
 
@@ -40,10 +44,7 @@ function App() {
         const decodedToken = jwtDecode(token);
         const { currentUser } = decodedToken;
         setUser(currentUser)
-
-        console.log(currentUser);
         if (decodedToken && decodedToken.exp * 1000 < Date.now()) {
-          // Token is expired, remove it from local storage
           localStorage.removeItem("token");
           navigate('/')
         }
@@ -53,16 +54,6 @@ function App() {
     setLoader(false)
   }, []);
 
-  useEffect(() => {
-    // Prevent scrolling when loader is visible
-    if (loader) {
-      document.body.style.overflow = 'hidden';
-      window.scrollTo(0, 0);
-    } else {
-      document.body.style.overflow = 'auto';
-      document.body.style.overflowX = 'hidden'; // Disable horizontal scrollbar
-    }
-  }, [loader]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -71,6 +62,13 @@ function App() {
       document.body.classList.remove('dark-mode');
     }
   }, [isDarkMode]);
+
+  const showToastMessage = (message, bgColor) => {
+    setToastMessage(message);
+    setToastBgColor(bgColor); 
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000);
+  };
 
   const snackbar = (text) => {
     setSnackbarText(text);
@@ -81,9 +79,12 @@ function App() {
     <GeneralContext.Provider value={{
       snackbar, user, setUser, count, setCount,
       cartProducts, setCartProducts, search, setSearch,
-      loader, setLoader, gridLoader, setGridLoader, isDarkMode, setIsDarkMode, loginModal, setLoginModal, signupModal, setSignModal,
-      isSmallScreen, setIsSmallScreen
+      setLoader, loader, setGridLoader, gridLoader,
+      isDarkMode, setIsDarkMode, loginModal, setLoginModal,
+      signupModal, setSignModal, isSmallScreen, setIsSmallScreen,
+      showToastMessage
     }}>
+
       <ScrollToTop />
       <CenteredLayout>
         <Navbar />
@@ -91,7 +92,8 @@ function App() {
         <Footer />
         {loader && <Loader />}
         {snackbarText && <Snackbar text={snackbarText} />}
-      </CenteredLayout>
+        {showToast && <Toast message={toastMessage} bgColor={toastBgColor} visible={showToast} />}
+        </CenteredLayout>
     </GeneralContext.Provider>
   );
 }
