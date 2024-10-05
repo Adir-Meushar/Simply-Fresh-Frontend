@@ -9,7 +9,7 @@ import Footer from './components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
-import Toast from './components/toastMessage/Toast';
+import ToastMessage from './components/toastMessage/Toast';
 
 export const GeneralContext = createContext();
 
