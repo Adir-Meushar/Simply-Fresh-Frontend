@@ -1,3 +1,5 @@
+import './toast.css'
+
 function ToastMessage({ message, visible, bgColor }) {
     return (
         <div

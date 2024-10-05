@@ -92,7 +92,8 @@ function App() {
         <Footer />
         {loader && <Loader />}
         {snackbarText && <Snackbar text={snackbarText} />}
-        {showToast && <Toast message={toastMessage} bgColor={toastBgColor} visible={showToast} />}
+        {showToast && <ToastMessage message={toastMessage} bgColor={toastBgColor} visible={showToast} />}
+
         </CenteredLayout>
     </GeneralContext.Provider>
   );
