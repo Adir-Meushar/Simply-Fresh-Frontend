@@ -3,14 +3,14 @@ import { GeneralContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 
 function Logout({handleClick}) {
-    const { setUser, snackbar, user, setLoader } = useContext(GeneralContext)
+    const { setUser, user, setLoader,showToastMessage } = useContext(GeneralContext)
     
     const navigate = useNavigate();
 
     const logout = () => {
         localStorage.clear();
         setLoader(true)
-        snackbar(`Until Next Time ${user.firstName} 😁`)
+        showToastMessage(`Until Next Time ${user.firstName} 😁`,'#2196F3')
         setUser(null)
         navigate('/')
         setTimeout(() => {

@@ -10,7 +10,7 @@ function Login() {
     password: "",
   });
 
-  const { setUser, snackbar, setLoader, loginModal, setLoginModal, setSignModal, isDarkMode } = useContext(GeneralContext);
+  const { setUser, setLoader, loginModal, setLoginModal, setSignModal, isDarkMode,showToastMessage } = useContext(GeneralContext);
 
   const handleValid = (ev) => {
     const { name, value } = ev.target;
@@ -54,11 +54,11 @@ function Login() {
           password: "",
         });
         setErrors([]);
-        snackbar(`Welcome ${data.user.firstName}!`)
+        showToastMessage(`Hello & Welcome ${data.user.firstName}!`,'#4CAF50')
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      snackbar('Email or Password is Incorrect')
+      showToastMessage('Email or Password is Incorrect','red')
     }
     setTimeout(() => {
       setLoader(false)

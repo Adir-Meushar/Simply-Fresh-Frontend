@@ -106,7 +106,7 @@ function ProductsManagement() {
     return (
         <>
             <div className='page-header'>
-                <h1>Product Management</h1>
+                <h1>Inventory</h1>
                 <p>Here you can find information about the products.</p>
                 <p>Total Products:{products.length}</p>
                 <NewProduct updateProducts={updateProducts} /> <SearchBar />

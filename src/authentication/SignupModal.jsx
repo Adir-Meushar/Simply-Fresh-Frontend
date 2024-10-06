@@ -18,7 +18,7 @@ function Signup() {
     houseNumber: ""
   });
   
-  const { snackbar, setLoader, signupModal, setSignModal, setLoginModal, isDarkMode } = useContext(GeneralContext);
+  const {setLoader, signupModal, setSignModal, setLoginModal, isDarkMode,showToastMessage } = useContext(GeneralContext);
 
   const handleValid = (ev) => {
     const { name, value } = ev.target;
@@ -52,7 +52,7 @@ function Signup() {
 
       if (data.error) {
         if (data.error.includes('Email already exists')) {
-          snackbar('Email already exists');
+          showToastMessage(`Email already exists`,'#4CAF50')
         } else {
           setErrors(data.error);
         }
@@ -66,7 +66,7 @@ function Signup() {
         setTimeout(() => {
           setLoader(false)
         }, 500)
-        snackbar(`Hello and Welcome ${data?.firstName}!`)
+        showToastMessage(`Hello & Welcome ${data.user.firstName}!`,'#4CAF50')
         setLoginModal(true);
       }
     } catch (error) {

@@ -56,6 +56,13 @@ margin: 20px;
   border-radius: 10px;
   transition: all .3s;
 }
+.inventory-search-box{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .users-table ,
 .product-table{
     width: 70vw;
