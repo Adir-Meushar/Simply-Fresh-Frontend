@@ -12,12 +12,12 @@ function ProductsManagement() {
     const [modal, setModal] = useState(false);
     const [currentProduct, setCurrentProduct] = useState({});
     const { snackbar, setLoader } = useContext(GeneralContext);
-    const { search} = useContext(GeneralContext);
+    const { search } = useContext(GeneralContext);
 
     const fetchProducts = async () => {
 
         try {
-            const response = await fetch('https://simply-fresh-backend.onrender.com/products/all', {
+            const response = await fetch('http://localhost:4000/products/all', {
                 credentials: "include",
                 method: "GET",
                 headers: {
@@ -107,9 +107,11 @@ function ProductsManagement() {
         <>
             <div className='page-header'>
                 <h1>Inventory</h1>
-                <p>Here you can find information about the products.</p>
+                <p>Here you can find information about all the products.</p>
                 <p>Total Products:{products.length}</p>
+                <div className='inventory-search-box'>
                 <NewProduct updateProducts={updateProducts} /> <SearchBar />
+                </div>
             </div>
             <table className='product-table'>
                 <thead>
