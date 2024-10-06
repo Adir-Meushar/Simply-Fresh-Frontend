@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import Loader from './components/loader/Loader';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
+import Toast from './components/toastMessage/Toast';
 
 export const GeneralContext = createContext();
 
@@ -31,8 +32,8 @@ function App() {
   const [signupModal, setSignModal] = useState(false)
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1000);
   const [showToast, setShowToast] = useState(false);
-  const [toastMessage,setToastMessage]=useState('')
-  const [toastBgColor, setToastBgColor] = useState(''); // Add this line
+  const [toastMessage, setToastMessage] = useState('')
+  const [toastBgColor, setToastBgColor] = useState('');
 
   const navigate = useNavigate();
 
@@ -64,7 +65,7 @@ function App() {
 
   const showToastMessage = (message, bgColor) => {
     setToastMessage(message);
-    setToastBgColor(bgColor); 
+    setToastBgColor(bgColor);
     setShowToast(true);
     setTimeout(() => setShowToast(false), 3000);
   };
@@ -91,7 +92,8 @@ function App() {
         <Footer />
         {loader && <Loader />}
         {snackbarText && <Snackbar text={snackbarText} />}
-        </CenteredLayout>
+        {showToast && <Toast message={toastMessage} bgColor={toastBgColor} visible={showToast} />}
+      </CenteredLayout>
     </GeneralContext.Provider>
   );
 }
