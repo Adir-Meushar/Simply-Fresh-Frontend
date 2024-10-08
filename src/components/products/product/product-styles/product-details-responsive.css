@@ -36,6 +36,8 @@
   }
   .product-details h1{
     font-size: 1.8rem;
+    /* Check margin later */
+    margin-top: 10px; 
   }
 }
 
@@ -53,6 +55,9 @@
   }
 }
 @media screen and (max-width:400px){
+  .product-details {
+    height: 75vh;
+}
   .product-details p{
   line-height: 1.2; 
  }

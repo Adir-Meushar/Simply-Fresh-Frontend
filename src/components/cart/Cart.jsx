@@ -5,14 +5,13 @@ import { BsTrash3 } from "react-icons/bs";
 import Counter from '../counter/Counter';
 import { GeneralContext } from '../../App';
 import { Link } from 'react-router-dom';
-import { PiMagnifyingGlassBold } from "react-icons/pi";
-import { PiSmileySadDuotone } from "react-icons/pi";
+import Empty from '../emptyArea/Empty';
 
 function Cart() {
     const [cartModal, setCartModal] = useState(false);
     const [totalPrice, setTotalPrice] = useState(0);
     const cartImg = process.env.PUBLIC_URL + '/images/shopping-bag.png';
-    const { count, setCount, cartProducts, setCartProducts, isDarkMode } = useContext(GeneralContext);
+    const { count, setCount, cartProducts, setCartProducts, isDarkMode,showToastMessage } = useContext(GeneralContext);
     const itemInCart = cartProducts.length;
 
     useEffect(() => {
@@ -41,16 +40,35 @@ function Cart() {
         localStorage.setItem('cart', JSON.stringify(updatedCart));
     };
 
+    const handleRemoveItem = (index) => {
+        // Remove the item at the given index
+        const updatedCart = [...cartProducts];
+        updatedCart.splice(index, 1);
+        setCartProducts(updatedCart);
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+    };
+
+
     const clearCart = () => {
-        localStorage.removeItem('cart')
-        setCartProducts([])
+        if(cartProducts.length>0){
+            if (!window.confirm('Are you sure you want to clear your cart?')) {
+                return;
+            } else {
+                localStorage.removeItem('cart')
+                setCartProducts([])
+                showToastMessage('Your cart is now empty','#2196F3')
+            }
+        }else{
+            showToastMessage('Your cart is now empty','#2196F3')
+
+        }
     }
 
     return (
         <>
             <div className='shopping-cart-box' onClick={() => { setCartModal(true); }}>
                 <div className='products-in-cart'>{itemInCart > 0 ? itemInCart : ''}</div>
-                <img className="cart-img" src={cartImg} alt="Cart" />     
+                <img className="cart-img" src={cartImg} alt="Cart" />
             </div>
 
             {cartModal && (
@@ -85,6 +103,7 @@ function Cart() {
                                                 </div>
                                             </div>
                                             <Counter count={cartItem.quantity} onChange={(value) => handleQuantityChange(index, value)} />
+                                            <button className='cart-item-remove-btn' onClick={() => handleRemoveItem(index)} >&times;</button>
                                         </div>
                                     ))}
                                 </div>
@@ -93,18 +112,13 @@ function Cart() {
                                 </p>
                                 <div className={'cart-payout ' + (cartProducts.length > 6 ? "cart-payout-sticky" : "cart-payout-fixed")}>
                                     <Link to={'/checkout'}>
-                                    <button disabled={totalPrice < 50} onClick={() => setCartModal(false)} >Go To Checkout</button>
+                                        <button disabled={totalPrice < 50} onClick={() => setCartModal(false)} >Go To Checkout</button>
                                     </Link>
                                 </div>
                             </>
                         ) :
-                         <div className='empty-cart-msg'>
-                            <div className="custom-icon">
-                                <PiMagnifyingGlassBold className="magnifying-glass" />
-                                <PiSmileySadDuotone className="sad-smiley" />
-                            </div>
-                            <p>Cart is empty... </p>
-                        </div>}
+                            <Empty message={'Your cart is empty...'} cartModal={setCartModal} />
+                        }
                     </div>
                 </div>
             )}

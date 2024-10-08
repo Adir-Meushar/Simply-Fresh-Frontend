@@ -1,22 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import { GeneralContext } from "../../../App";
 import moment from 'moment'; 
-import { useNavigate } from "react-router-dom";
-import { PiMagnifyingGlassBold } from "react-icons/pi";
-import { PiSmileySadDuotone } from "react-icons/pi";
 import './user-orders.css'
+import Empty from "../../../components/emptyArea/Empty";
 
 function UserOrders() {
     const [myOrders, setMyOrders] = useState([]);
     const [expandedOrder, setExpandedOrder] = useState(null);
     const { snackbar, user, isDarkMode } = useContext(GeneralContext);
     const currentDate = Date.now();
-    const navigate = useNavigate();
 
     useEffect(() => {
         const getMyOrders = async (userId) => {
             try {
-                const response = await fetch(`https://simply-fresh-backend.onrender.com/orders/my-orders/${userId}`, {
+                const response = await fetch(`http://localhost:4000/orders/my-orders/${userId}`, {
                     credentials: "include",
                     method: "GET",
                     headers: {
@@ -58,7 +55,7 @@ function UserOrders() {
         } else {
             try {
 
-                const response = await fetch(`https://simply-fresh-backend.onrender.com/orders/delete/${orderId}`, {
+                const response = await fetch(`http://localhost:4000/orders/delete/${orderId}`, {
                     credentials: "include",
                     method: "DELETE",
                     headers: {
@@ -125,14 +122,7 @@ function UserOrders() {
                         </div>
                     ))
                 ) : (
-                    <div className="no-orders">
-                        <div className="custom-icon">
-                            <PiMagnifyingGlassBold className="magnifying-glass" />
-                            <PiSmileySadDuotone className="sad-smiley" />
-                        </div>
-                        <p>No orders yet... </p>
-                        <button className='back-to-shop-btn' onClick={() => navigate('/')}>Start shopping now!</button>
-                    </div>
+                    <Empty message={'No Orders yet..'}/>
                 )}
             </div>
         </div>
