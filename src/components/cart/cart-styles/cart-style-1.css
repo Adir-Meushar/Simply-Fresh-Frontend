@@ -24,6 +24,7 @@
 .cart{
     position: absolute;
     left: 0;
+    top: 0;
     width: 27vw;
     min-width: 450px;
     height: 100vh;
@@ -58,6 +59,7 @@
   padding: 10px;
 }
 .cart-card{
+  position: relative;
   background-color: #fff;
   border-radius: 5px;
   display: flex;
@@ -81,16 +83,28 @@
   width: 20%;
   gap: 5px;
 }
-.cart .close-btn{
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 2.5rem;
-    color: #3e493f;
+
+.cart-item-remove-btn, 
+.cart .close-btn {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #3e493f;
 }
+
+.cart-item-remove-btn {
+  right: 8px;
+  top: 2px;
+  font-size: 1.5rem;
+}
+
+.cart .close-btn {
+  right: 15px;
+  top: 5px;
+  font-size: 2.5rem;
+}
+
 
 .cart-payout{
   width: 100%;
