@@ -78,14 +78,18 @@ overflow-y: auto;
  .deliverd-btn:hover{
   background-color: rgb(47, 143, 47); 
   }
+
+  .user-orders .empty-area{
+    min-width: 550px;
+
+  }
 .empty-area{
-  min-width: 550px;
   padding: 20px;
   margin-top: 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   font-weight: bold;
 }
 .custom-icon{
@@ -104,15 +108,14 @@ overflow-y: auto;
   .user-orders{
       position: unset;
       }
-      .no-orders{
-       margin-top: unset;
-      }
+   
 }
 @media screen and (max-width:600px) {
-  .order , .no-orders{
-      width: 83vw;
-      min-width:300px;
-      }
+  .user-orders .empty-area,.order{
+    width: 85vw;
+    min-width:300px;
+  }
+
       .items{
        grid-template-columns: repeat(2,1fr);
       }
